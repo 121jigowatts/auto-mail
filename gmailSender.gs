@@ -9,12 +9,12 @@ function send_start() {
   var to = [];
   var cc = [];
   for (var i = 0; i < values.length; i++) {
-
-    var row = "";
     
     if (values[i][0] == 'to') {
       to.push(values[i][1]);
-    } else if (values[i][0] == 'cc') {
+    }
+    
+    if (values[i][0] == 'cc') {
       cc.push(values[i][1]);
     }    
   }
@@ -23,7 +23,6 @@ function send_start() {
   var addresscc = cc.join(',');
   Logger.log(addressto);
   Logger.log(addresscc);
-
 
   const subject = `${empnum}_${empname}_${ftoday}_${status_start}`;
   Logger.log(subject);
